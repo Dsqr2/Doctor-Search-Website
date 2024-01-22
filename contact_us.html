@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, intial-scale = 1.0">
+    <title>MediMap</title>
+
+    <link rel="icon" href="./assets/Logo.png"/>
+    <link rel="stylesheet" href="style.css" />    <!-- --CSS link-- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> <!--Icons-->
+    
+  </head>
+  <body>
+    <div class="container">
+        <div class="navbar">
+            <img src="./assets/MediMap.png" href="index.html" class = "logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="contact_us.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contact-row1">
+            <img src="./assets/Contact Us.png">
+        </div>
+            <div class="contact-row1-content">
+                <h1>Get the info you're</h1>
+                <h1>looking for right now</h1>
+        </div>
+
+        <section class="contact" id="contact">
+            <h2>Get in Touch with Team</h2>
+            <div class="contact-form-container">
+              <div class="contact-form">
+                <form action="https://formspree.io/f/mnqenlop" method="POST">
+                  <div class="form-control">
+                    <label for="name">Doctor's Name</label>
+                    <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field"
+                      required />
+                  </div>
+                  <div class="form-control">
+                    <label for="email">Doctor's Email</label>
+                    <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field"
+                      required />
+                  </div>
+                  <div class="form-control">
+                    <label for="message">Description</label>
+                    <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message"
+                      class="input-field" required></textarea>
+                  </div>
+                  <input type="submit" value="Submit" id="submit-btn" class="submit-btn" />
+                </form>
+              </div>
+            </div>
+          </section>
+
+    </div>
+  </body>
+</html>

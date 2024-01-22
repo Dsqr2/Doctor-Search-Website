@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, intial-scale = 1.0">
+    <title>MediMap</title>
+
+    <link rel="icon" href="./assets/Logo.png" />
+    <link rel="stylesheet" href="style.css" />    <!-- --CSS link-- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> <!--Icons-->
+  </head>
+  <body>
+    <div class="container">
+        <div class="navbar">
+            <img src="./assets/MediMap.png" href="index.html" class = "logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="contact_us.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="hero">
+          <div class="card">
+            <img src="./assets/Search.png" alt="">  
+            <div class="card-content">
+              <h6>Discover Nearby Doctors</h6>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/Hospital.png" alt="">
+            <div class="card-content">
+              <h6>Find Medical Centers Nearby</h6>
+            </div>
+            
+          </div>
+          <div class="card">
+            <img src="./assets/24-7.png" alt="">
+            <div class="card-content">
+              <h6>Immediate Medical Help Anytime</h6>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="text">
+          <h1>Search Your Doctor</h1>
+        </div>
+        
+        <div class="system">
+          
+          <label for="type" class="label">Speciality</label>
+          <select id="type" name="speciality" class="speciality">
+            <option value="select-one">Select Speciality</option>
+            <option value="general-physician">General Physician</option>
+            <option value="gynecologist">Gynecologist</option>
+            <option value="dermatologist">Dermatologist</option>
+            <option value="dentist">Dentist</option>
+            <option value="ent">ENT Doctor</option>
+            <option value="psychiatrist">Psychiatrist</option>
+            <option value="orthopedist">Orthopedist</option>
+          </select>
+
+          <label for="location" class="label">Location</label>
+            <input type="text" id="location" placeholder=" Enter Location"  class="form" required/>
+              <button type="button" class="search-button" id="search-button">Search</button>
+        </div>
+    </div>
+    
+  </body>
+</html>
