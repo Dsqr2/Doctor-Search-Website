@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMap</title>
+    <link rel="icon" href="./assets/Logo.png"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://img.freepik.com/free-photo/pastel-pink-vignette-concrete-textured-background_53876-129734.jpg?size=626&ext=jpg&ga=GA1.1.2061837803.1705268599&semt=ais'); 
+             background-size: cover; 
+             background-repeat: no-repeat;">
+
+    <!-- Header Section -->
+        <div class="container mx-auto px-6 py-2">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a href="index.html" class="text-xl font-semibold text-gray-700">
+                        <img class="h-[70px] w-[170px]" src="./assets/MediMap.png">
+                </div>
+                <nav class="flex items-center space-x-4">
+                    <a href="index.html" class="text-black text-[20px] hover:text-[22px] hover:underline" style= "margin-right: 90px;">HOME</a>
+                    <a href="#" class="text-black text-[20px] hover:text-[22px] hover:underline" style= "margin-right: 90px;">ABOUT</a>
+                    <a href="#" class="text-black text-[20px] hover:text-[22px] hover:underline" style= "margin-right: 90px;">SERVICES</a>
+                    <a href="contact_us.html" class="text-black text-[20px] hover:text-[22px] hover:underline">CONTACT US</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8" >
+         <!-- Features Section -->
+         <div class="mt-8 p-8 bg-white shadow-lg" style="border: 1.5px solid rgb(255, 125, 110);">
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+                <div>
+                    <i class="fas fa-search fa-3x" style="color: rgb(255, 125, 110)"></i>
+                    <h3 class="text-[21px]  mt-4 hover:font-bold">Discover Nearby Doctors</h3>
+                    <!-- <p class="text-gray-600 mt-1">Choose from a variety of certified and experienced healthcare professionals.</p> -->
+                </div>
+                <div>
+                    <i class="fas fa-hospital fa-3x" style="color: rgb(255, 125, 110)"></i>
+                    <h3 class="text-[21px]  mt-4 hover:font-bold">Find Medical Centers Nearby</h3>
+                    <!-- <p class="text-gray-600 mt-1">Find doctors in your vicinity for quick and easy access to healthcare.</p> -->
+                </div>
+                <div>
+                    <i class="fas fa-clock fa-3x" style="color: rgb(255, 125, 110)"></i>
+                    <h3 class="text-[21px]  mt-4 hover:font-bold">Immediate Medical Help Anytime</h3>
+                    <!-- <p class="text-gray-600 mt-1">Get assistance anytime with our round-the-clock customer service.</p> -->
+                </div>
+            </div>
+        </div> 
+        <br>
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-[20px] font-bold mb-3" for="specialization">
+                    Specialization
+                </label>
+                <div class="relative">
+                    <select id="search" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <option>General Physician</option>
+                        <option>Gynecologist</option>
+                        <option>Dermatologist</option>
+                        <option>Dentist</option>
+                        <option>ENT Doctor</option>
+                        <option>Psychiatrist</option>
+                        <option>Orthopedist</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-[20px] font-bold mb-3" for="location">
+                    Location
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="area" type="text" placeholder="Enter location">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="text-white py-2 px-4 rounded font-bold" style="background-color: rgb(255, 125, 110);" type="button" id="search_btn">
+                    Search
+                </button>
+            </div>
+        </div>
+
+
+        <!-- List of Doctors -->
+        <div class="space-y-4" id="searchSection">
+            
+        </div>
+        
+    </div>
+    <script>
+    $(document).ready(function(){
+        $("#search_btn").click(function(){
+            
+            var doctor_type = $("#search").val();
+            var doctor_area = $("#area").val();
+            
+            $.post("webservice.php", {search: doctor_type, area: doctor_area}, function(response){
+                $("#searchSection").html(response);
+            });
+            
+        });
+    });
+    
+    
+    </script>
+</body>
+</html>
